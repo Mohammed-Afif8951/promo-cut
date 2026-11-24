@@ -1,0 +1,60 @@
+/* Default promo-cut look. Override with "theme" colors or an extra "css" file in promo.json. */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html, body { width: __W__px; height: __H__px; background: #000; overflow: hidden; }
+#root { position: relative; width: __W__px; height: __H__px; overflow: hidden; background: #000; font-family: "Outfit", "Segoe UI", sans-serif; color: #fff; }
+.clip { position: absolute; inset: 0; }
+.shot { width: __W__px; height: __H__px; object-fit: cover; transform-origin: 50% 50%; }
+.shade { z-index: 2; pointer-events: none;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 17%),
+    linear-gradient(0deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.2) 30%, rgba(0, 0, 0, 0) 45%); }
+
+/* Brand bar */
+.brand { z-index: 6; inset: auto; top: 96px; left: 0; right: 0; text-align: center; text-shadow: 0 3px 14px rgba(0, 0, 0, 0.7); }
+.brand b { display: block; font-family: "Kaushan Script", cursive; font-weight: 400; font-size: 84px; line-height: 1; }
+.brand span { display: inline-block; margin-top: 6px; font-weight: 800; font-size: 30px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--highlight); }
+
+/* Item pill + price badge */
+.tag { z-index: 6; inset: auto; top: 330px; left: 44px; right: 44px; display: flex; align-items: center; gap: 22px; }
+.tname { padding: 18px 34px; border-radius: 22px; background: rgba(255, 255, 255, 0.96); color: var(--ink);
+  font-weight: 900; font-size: 54px; box-shadow: 0 10px 26px rgba(0, 0, 0, 0.35); }
+.tprice { padding: 10px 34px; border-radius: 26px; background: var(--accent); color: #fff; font-family: "Archivo Black", "Segoe UI", sans-serif;
+  font-size: 92px; line-height: 1.1; border: 5px solid #fff; box-shadow: 0 14px 30px rgba(0, 0, 0, 0.45); }
+
+/* Banner stamp */
+.stamp.banner { z-index: 5; inset: auto; top: 560px; left: 0; right: 0; margin: 0 auto; width: 860px; text-align: center; line-height: 0.95; }
+.stamp.banner b { display: block; margin: 0 auto; width: max-content; padding: 10px 50px; background: var(--secondary); font-family: "Archivo Black", sans-serif; font-size: 170px; transform: skewX(-8deg); box-shadow: 0 18px 40px rgba(0, 0, 0, 0.5); }
+.stamp.banner span { display: block; margin: 10px auto 0; width: max-content; padding: 12px 40px; background: var(--accent); font-family: "Archivo Black", sans-serif; font-size: 96px; transform: skewX(-8deg); box-shadow: 0 18px 40px rgba(0, 0, 0, 0.5); }
+
+/* Badge stamp */
+.stamp.badge { z-index: 7; inset: auto; top: 150px; right: 40px; left: auto; width: 330px; height: 330px; border-radius: 50%;
+  background: var(--highlight); color: var(--accent); border: 8px dashed var(--accent); display: flex; flex-direction: column; align-items: center; justify-content: center;
+  font-family: "Archivo Black", sans-serif; line-height: 0.95; box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5); text-align: center; }
+.stamp.badge small { font-family: "Outfit", sans-serif; font-weight: 900; font-size: 34px; letter-spacing: 0.06em; }
+.stamp.badge b { font-size: 92px; font-weight: 400; }
+.stamp.badge span { font-size: 54px; }
+
+/* Price board */
+.board { z-index: 6; inset: auto; top: 500px; left: 36px; right: 36px; padding: 26px 26px 30px; border-radius: 34px;
+  background: color-mix(in srgb, var(--secondary) 88%, transparent); box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5); }
+.board .bh { text-align: center; font-family: "Archivo Black", sans-serif; font-size: 44px; color: var(--highlight); margin-bottom: 18px; letter-spacing: 0.02em; }
+.board .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px 16px; }
+.board .row { display: flex; justify-content: space-between; align-items: center; padding: 10px 12px 10px 22px; border-radius: 18px; background: #fff; color: var(--ink); }
+.board .row span { font-weight: 800; font-size: 32px; }
+.board .row b { padding: 4px 14px; border-radius: 12px; background: var(--accent); color: #fff; font-family: "Archivo Black", "Segoe UI", sans-serif; font-weight: 400; font-size: 34px; }
+
+/* Captions (about 73% down, clear of app UI at the bottom) */
+.cap { z-index: 10; inset: auto; top: calc(__H__px * 0.729); left: 40px; right: 40px; text-align: center; }
+.cap span { display: inline-block; font-weight: 900; font-size: 88px; line-height: 1.05; color: #fff;
+  -webkit-text-stroke: 4px #000; paint-order: stroke fill; text-shadow: 0 6px 0 rgba(0, 0, 0, 0.55), 0 12px 30px rgba(0, 0, 0, 0.6); }
+.cap em { font-style: normal; color: var(--highlight); }
+
+/* End card. Line styles: brand, sub, offer, days, line, cta */
+.endcard { z-index: 9; display: flex; flex-direction: column; align-items: center; padding-top: 230px; }
+.endshade { position: absolute; inset: 0; opacity: 0; background: linear-gradient(180deg, color-mix(in srgb, var(--secondary) 88%, transparent) 0%, color-mix(in srgb, var(--secondary) 70%, transparent) 45%, color-mix(in srgb, var(--accent) 35%, transparent) 75%, rgba(0, 0, 0, 0.55) 100%); }
+.e { position: relative; opacity: 0; text-align: center; padding: 0 40px; }
+.e.e-brand { font-family: "Kaushan Script", cursive; font-size: 150px; line-height: 1.1; text-shadow: 0 8px 24px rgba(0, 0, 0, 0.45); }
+.e.e-sub { font-weight: 800; font-size: 44px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--highlight); }
+.e.e-offer { margin-top: 50px; padding: 16px 44px; background: var(--accent); border: 5px solid #fff; border-radius: 20px; font-family: "Archivo Black", sans-serif; font-size: 76px; }
+.e.e-days { margin-top: 34px; font-weight: 900; font-size: 56px; color: var(--highlight); }
+.e.e-line { margin-top: 70px; font-weight: 800; font-size: 48px; }
+.e.e-cta { margin-top: 26px; padding: 18px 56px; border-radius: 60px; background: #fff; color: var(--secondary); font-family: "Archivo Black", sans-serif; font-size: 78px; }

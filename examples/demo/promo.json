@@ -1,0 +1,38 @@
+{
+  "title": "Demo Store Weekend Sale",
+  "width": 1080,
+  "height": 1920,
+  "fps": 25,
+  "footage": "footage",
+  "voice": "vo",
+  "out": "promo-build",
+  "music": { "file": "music.wav", "volume": 0.7 },
+  "theme": { "accent": "#e63946", "secondary": "#1d3557", "highlight": "#ffd166", "ink": "#1d1d1f" },
+  "brand": { "name": "Demo Store", "tagline": "Shoes & Bags", "from": 0.3, "until": { "seg": "p2", "at": "end" } },
+  "stamps": [
+    { "lines": ["BIG", "WEEKEND SALE"], "style": "banner", "from": { "seg": "intro", "at": "voice", "offset": 0.8 }, "until": { "seg": "intro", "at": "end" } },
+    { "lines": ["ONLY", "2 DAYS", "LEFT!"], "style": "badge", "pulse": true, "from": { "seg": "hurry", "at": "voice", "offset": 0.3 }, "until": { "seg": "hurry", "at": "end" } }
+  ],
+  "board": { "title": "ALL OFFERS", "from": { "seg": "p2", "at": "end", "offset": 0.1 }, "until": { "seg": "hurry", "at": "end" } },
+  "endcard": {
+    "from": { "seg": "outro", "at": "voice", "offset": 0.1 },
+    "lines": [
+      { "text": "Demo Store", "style": "brand" },
+      { "text": "Shoes & Bags", "style": "sub" },
+      { "text": "WEEKEND SALE", "style": "offer" },
+      { "text": "Sat & Sun only", "style": "days" },
+      { "text": "123 Example Street", "style": "line" },
+      { "text": "example.com", "style": "cta", "pulse": true }
+    ]
+  },
+  "segments": [
+    { "id": "intro", "clip": "street.mp4", "in": 0, "speed": 1.2, "pre": 0.4, "caption": "*Big weekend* | sale is on!" },
+    { "id": "p1", "clip": "shelf.mp4", "in": 0.5, "tag": { "item": "Sneakers", "price": "$29" }, "caption": "*Sneakers,* only *$29*" },
+    { "id": "p2", "clip": "shelf.mp4", "in": 2, "zoom": 1.3, "anchor": "bottom", "tag": { "item": "Tote Bags", "price": "$15" }, "caption": "*Tote bags,* | only *$15*", "post": 0.5 },
+    { "id": "hurry", "clip": "street.mp4", "in": 2, "caption": "*Hurry,* only | *two days* left!" },
+    { "id": "outro", "clip": "street.mp4", "in": 4, "post": 3, "caption": "*Demo Store,* | see you there" }
+  ],
+  "takes": {
+    "intro": { "file": "takes/intro.wav" }
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "name": "promo-cut",
+  "version": "0.1.0",
+  "description": "Turn raw phone/drone clips + voiceover lines into a vertical (9:16) promo video with word-timed captions, price tags, stamps and an end card. Config-driven, ffmpeg + HyperFrames.",
+  "author": "Mohammed-Afif8951",
+  "homepage": "https://github.com/Mohammed-Afif8951/promo-cut#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mohammed-Afif8951/promo-cut.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Mohammed-Afif8951/promo-cut/issues"
+  },
+  "type": "module",
+  "bin": {
+    "promo-cut": "bin/promo-cut.js"
+  },
+  "exports": {
+    ".": "./src/index.js"
+  },
+  "files": [
+    "bin/",
+    "src/",
+    "examples/demo/promo.json",
+    "examples/demo/make-media.mjs",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "test": "node test/smoke.mjs"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "dependencies": {
+    "hyperframes": "^0.9.91"
+  },
+  "keywords": [
+    "video",
+    "ffmpeg",
+    "shorts",
+    "reels",
+    "tiktok",
+    "promo",
+    "captions",
+    "vertical-video",
+    "hyperframes"
+  ],
+  "license": "MIT"
+}
