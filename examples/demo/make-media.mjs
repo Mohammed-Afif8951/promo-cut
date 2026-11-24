@@ -11,8 +11,11 @@ const p = (...x) => path.join(here, ...x);
 for (const d of ["footage", "vo", "takes"]) fs.mkdirSync(p(d), { recursive: true });
 
 // Landscape and portrait sources, to show both get cropped to 9:16.
-ff("-f", "lavfi", "-i", "testsrc2=size=1920x1080:rate=25:duration=10", "-c:v", "libx264", "-pix_fmt", "yuv420p", p("footage", "street.mp4"));
-ff("-f", "lavfi", "-i", "smptehdbars=size=1080x1920:rate=25:duration=10", "-c:v", "libx264", "-pix_fmt", "yuv420p", p("footage", "shelf.mp4"));
+// Moving colour gradients stand in for real footage.
+ff("-f", "lavfi", "-i", "gradients=size=1920x1080:rate=25:duration=10:speed=0.03:type=radial:nb_colors=4:c0=0x0b132b:c1=0x3a506b:c2=0x5bc0be:c3=0x1c2541",
+  "-c:v", "libx264", "-pix_fmt", "yuv420p", p("footage", "street.mp4"));
+ff("-f", "lavfi", "-i", "gradients=size=1080x1920:rate=25:duration=10:speed=0.03:type=linear:nb_colors=3:c0=0x2b2d42:c1=0x6d597a:c2=0xb56576",
+  "-c:v", "libx264", "-pix_fmt", "yuv420p", p("footage", "shelf.mp4"));
 
 // "Voice" lines: tones of different lengths stand in for recorded speech.
 const lines = { intro: 2.0, p1: 1.4, p2: 1.6, hurry: 1.8, outro: 2.0 };

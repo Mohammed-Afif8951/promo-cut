@@ -1,5 +1,16 @@
 # promo-cut
 
+[![npm version](https://img.shields.io/npm/v/promo-cut.svg)](https://www.npmjs.com/package/promo-cut)
+[![npm downloads](https://img.shields.io/npm/dm/promo-cut.svg)](https://www.npmjs.com/package/promo-cut)
+[![license: MIT](https://img.shields.io/npm/l/promo-cut.svg)](LICENSE)
+[![node](https://img.shields.io/node/v/promo-cut.svg)](package.json)
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/Mohammed-Afif8951/promo-cut/main/docs/demo.gif" alt="promo-cut demo: captions, price tags, a stamp, a price board and an end card over placeholder footage" width="300">
+</p>
+
+<p align="center"><sub>Built from <code>examples/demo</code> with placeholder footage and tones.</sub></p>
+
 Turn raw phone or drone clips plus recorded voice lines into a vertical (9:16) promo video. The video gets punchy 3-word captions, item and price tags, stamps, a price board and an end card. Everything is driven by one `promo.json`.
 
 Built for shop, real-estate and product promos for Reels, Shorts and TikTok.
